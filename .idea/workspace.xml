@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3085a61e-0613-4aa4-9e1b-f41402c2724f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/liam/shop/servlet/ActiveServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/liam/shop/servlet/ActiveServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/liam/shop/servlet/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/liam/shop/servlet/RegisterServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/liam/shop/test/IProductDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/liam/shop/test/IProductDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/liam/shop/test/IUserDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/liam/shop/test/IUserDaoTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,17 +17,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IgnoredFileRootStore">
-    <option name="generatedRoots">
-      <set>
-        <option value="E:\WorkSpace\IDEA WorkSpace\GeekShop\.idea" />
-      </set>
-    </option>
-  </component>
   <component name="ProjectId" id="1Z1wZCWyBrA6QUk2JfLP4QMBSyv" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
@@ -31,9 +28,11 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -46,7 +45,8 @@
     <property name="project.structure.last.edited" value="Facets" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RestServicesNavigator">
     <treeState>
@@ -130,23 +130,6 @@
       </method>
     </configuration>
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-            </expand>
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -159,6 +142,7 @@
       <updated>1584019961387</updated>
       <workItem from="1584019964613" duration="2712000" />
       <workItem from="1584022702570" duration="1297000" />
+      <workItem from="1592196466007" duration="306000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1584023470850</created>
@@ -178,7 +162,7 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.History.Properties">
     <option name="COLUMN_ORDER">
@@ -192,7 +176,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
-      <path value="E:/" />
+      <path value="$PROJECT_DIR$/../../../" />
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
     <MESSAGE value="test" />
@@ -219,10 +203,15 @@
       <screen x="0" y="0" width="1854" height="1080" />
     </state>
     <state x="402" y="386" width="440" height="465" key="FileChooserDialogImpl/0.0.1854.1080/-1920.-4.1920.1080@0.0.1854.1080" timestamp="1584024178234" />
-    <state x="464" y="134" key="SettingsEditor" timestamp="1584023657133">
-      <screen x="0" y="0" width="1854" height="1080" />
+    <state x="508" y="274" key="IDE.errors.dialog" timestamp="1592196468607">
+      <screen x="0" y="0" width="1857" height="1080" />
+    </state>
+    <state x="508" y="274" key="IDE.errors.dialog/0.0.1857.1080/-1920.-4.1920.1080@0.0.1857.1080" timestamp="1592196468607" />
+    <state x="235" y="147" key="SettingsEditor" timestamp="1592196771813">
+      <screen x="0" y="0" width="1857" height="1080" />
     </state>
     <state x="464" y="134" key="SettingsEditor/0.0.1854.1080/-1920.-4.1920.1080@0.0.1854.1080" timestamp="1584023657133" />
+    <state x="235" y="147" key="SettingsEditor/0.0.1857.1080/-1920.-4.1920.1080@0.0.1857.1080" timestamp="1592196771813" />
     <state x="625" y="434" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1584022414496">
       <screen x="0" y="0" width="1854" height="1080" />
     </state>
