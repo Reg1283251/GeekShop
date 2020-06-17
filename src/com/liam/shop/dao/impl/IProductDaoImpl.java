@@ -63,9 +63,9 @@ public class IProductDaoImpl implements IProductDao {
 	}
 
 	/**
-	 *@param cid ÉÌÆ·Àà±ğ
-	 *@param start limitµÄ¿ªÊ¼ÏÂ±ê
-	 *@param count limitµÄ½áÊøÏÂ±ê
+	 * @param cid   å•†å“ç±»åˆ«
+	 * @param start limitçš„å¼€å§‹ä¸‹æ ‡
+	 * @param count limitçš„ç»“æŸä¸‹æ ‡
 	 */
 	@Override
 	public List<Product> findProductListByPage(String cid, int start, int count) throws SQLException {

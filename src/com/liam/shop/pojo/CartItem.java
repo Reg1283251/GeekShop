@@ -10,17 +10,17 @@ import lombok.Setter;
 @Setter
 @Getter
 public class CartItem {
-	
+
 	/**
-	 * 商品信息
+	 * 鍟嗗搧淇℃伅
 	 */
 	private Product product;
 	/**
-	 * 订购数量
+	 * 璁㈣喘鏁伴噺
 	 */
 	private int buyNum;
 	/**
-	 * 总价
+	 * 鎬讳环
 	 */
 	private double subTotal;
 }

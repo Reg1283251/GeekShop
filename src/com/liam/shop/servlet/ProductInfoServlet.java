@@ -36,17 +36,17 @@ public class ProductInfoServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-//		½ÓÊÜ²ÎÊı
+//		æ¥å—å‚æ•°
 		String pid = request.getParameter("pid");
 		String cid = request.getParameter("cid");
 		String currentPage = request.getParameter("currentPage");
 
-//		²éÑ¯ÉÌÆ·
+//		æŸ¥è¯¢å•†å“
 		ProductService service = new ProductServiceImpl();
 		Product productInfo = service.findProductByID(pid);
-		Category category = service.findCategoryByCid(cid);// ²éÑ¯ÉÌÆ··ÖÀàÃû³Æ
+		Category category = service.findCategoryByCid(cid);// æŸ¥è¯¢å•†å“åˆ†ç±»åç§°
 
-//		ÕâÀïÔÚÇëÇóÀïÉèÖÃproduct,cid,currentPage,categoryµÄÒ³ÃæÊôĞÔ,´«ÈërequestÓòÖĞ
+//		è¿™é‡Œåœ¨è¯·æ±‚é‡Œè®¾ç½®product,cid,currentPage,categoryçš„é¡µé¢å±æ€§,ä¼ å…¥requeståŸŸä¸­
 		request.setAttribute("product", productInfo);
 		request.setAttribute("cid", cid);
 		request.setAttribute("currentPage", currentPage);
@@ -55,63 +55,63 @@ public class ProductInfoServlet extends HttpServlet {
 
 		handleCookie(request, response, pid);
 
-//		ÇëÇó×ª·¢
+//		è¯·æ±‚è½¬å‘
 		request.getRequestDispatcher("product_info.jsp").forward(request, response);
 
 	}
 
 	/**
-	 * -Ê¹ÓÃcookie¼¼Êõ±£´æä¯ÀÀ¼ÇÂ¼
-	 * 
+	 * -ä½¿ç”¨cookieæŠ€æœ¯ä¿å­˜æµè§ˆè®°å½•
+	 *
 	 * @param request
 	 * @param response
 	 */
 	private void handleCookie(HttpServletRequest request, HttpServletResponse response, String pid) {
 
 		String pids = null;
-//		´ÓcookieÖĞ¶ÁÈ¡ÊÇ·ñÓÉ½Ğ"pids"µÄÖµ
+//		ä»cookieä¸­è¯»å–æ˜¯å¦ç”±å«"pids"çš„å€¼
 		Cookie[] cookies = request.getCookies();
-//		ÅĞ¶ÏcookieÊÇ·ñÎª¿Õ
+//		åˆ¤æ–­cookieæ˜¯å¦ä¸ºç©º
 		if (cookies != null) {
-//			±éÀúcookie,Ñ°ÕÒpid
+//			éå†cookie,å¯»æ‰¾pid
 			for (Cookie c : cookies) {
-//				ÅĞ¶ÏÊÇ·ñÊÇpid
+//				åˆ¤æ–­æ˜¯å¦æ˜¯pid
 				if ("pids".equals(c.getName())) {
-//					»ñÈ¡cookieµÄÖµ
+//					è·å–cookieçš„å€¼
 					pids = c.getValue();
-					
-//					½«»ñÈ¡µÄpid×ª»¯ÎªÊı×é,·½±ã²Ù×÷pidµÄË³Ğò
-//					½«","×÷·Ö½ç·û,·Ö¸îpids³ÉÊı×é
+
+//					å°†è·å–çš„pidè½¬åŒ–ä¸ºæ•°ç»„,æ–¹ä¾¿æ“ä½œpidçš„é¡ºåº
+//					å°†","ä½œåˆ†ç•Œç¬¦,åˆ†å‰²pidsæˆæ•°ç»„
 					String[] pidStr = pids.split("-");
 					List<String> pidList = Arrays.asList(pidStr);
-					LinkedList<String> pidLink = new LinkedList<>(pidList);//×ª»»³ÉLinkedList¸ü·½±ã²Ù×÷
-					
-//					Èç¹ûcookiÀï°üº¬µ±Ç°µÄpid,ÒÆ³ıpid²¢ÖØĞÂ·Åµ½µÚÒ»¸ö(±£Ö¤ÆäÔÚä¯ÀÀ¼ÇÂ¼×îÇ°ÁĞ)
+					LinkedList<String> pidLink = new LinkedList<>(pidList);//è½¬æ¢æˆLinkedListæ›´æ–¹ä¾¿æ“ä½œ
+
+//					å¦‚æœcookié‡ŒåŒ…å«å½“å‰çš„pid,ç§»é™¤pidå¹¶é‡æ–°æ”¾åˆ°ç¬¬ä¸€ä¸ª(ä¿è¯å…¶åœ¨æµè§ˆè®°å½•æœ€å‰åˆ—)
 					if (pidLink.contains(pid)) {
 						pidLink.remove(pid);
 					}
-					pidLink.addFirst(pid);//ÎŞÂÛÊÇ·ñÖØ¸´,¶¼Ìí¼Óµ½×îĞÂµÄÎ»ÖÃ
-					
-//					Ê¹ÓÃ×Ö·û´®Æ´½Ó,ÖØĞÂ½«Êı×é×ª»¯Îª×Ö·û´®
+					pidLink.addFirst(pid);//æ— è®ºæ˜¯å¦é‡å¤,éƒ½æ·»åŠ åˆ°æœ€æ–°çš„ä½ç½®
+
+//					ä½¿ç”¨å­—ç¬¦ä¸²æ‹¼æ¥,é‡æ–°å°†æ•°ç»„è½¬åŒ–ä¸ºå­—ç¬¦ä¸²
 					StringBuffer sBuffer = new StringBuffer();
-					
-					for (int i = 0; i < pidLink.size() && i<7; i++) {
+
+					for (int i = 0; i < pidLink.size() && i < 7; i++) {
 						sBuffer.append(pidLink.get(i));
 						sBuffer.append("-");
 					}
-					
-					sBuffer.substring(0, sBuffer.length()-1);
-					
+
+					sBuffer.substring(0, sBuffer.length() - 1);
+
 					pids = sBuffer.toString();
 				}
 			}
-			System.out.println("debug:"+pids);
+			System.out.println("debug:" + pids);
 		}
-		
-//		´´½¨cookie²¢·Åµ½ÏìÓ¦ÖĞ
-		Cookie c = new Cookie("pids",pids);
+
+//		åˆ›å»ºcookieå¹¶æ”¾åˆ°å“åº”ä¸­
+		Cookie c = new Cookie("pids", pids);
 		response.addCookie(c);
-		
+
 
 	}
 

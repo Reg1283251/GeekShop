@@ -5,25 +5,28 @@ import java.sql.SQLException;
 import com.liam.shop.pojo.User;
 
 public interface IUserDao {
-	
+
 	/**
-	 * -²åÈëÓÃ»§
+	 * -æ’å…¥ç”¨æˆ·
+	 *
 	 * @param user
 	 * @return
 	 * @throws SQLException
 	 */
 	public int insert(User user) throws SQLException;
-	
+
 	/**
-	 * -¼¤»îÓÃ»§
+	 * -æ¿€æ´»ç”¨æˆ·
+	 *
 	 * @param code
 	 * @return
 	 * @throws SQLException
 	 */
 	public int active(String code) throws SQLException;
-	
+
 	/**
-	 * -¸ù¾İÓÃ»§Ãû²éÕÒÓÃ»§
+	 * -æ ¹æ®ç”¨æˆ·åæŸ¥æ‰¾ç”¨æˆ·
+	 *
 	 * @param username
 	 * @return
 	 * @throws SQLException

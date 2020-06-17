@@ -13,8 +13,8 @@ import java.util.Map;
 @Setter
 @Getter
 public class Cart {
-//	¹ºÎï³µÖĞËùÓĞÉÌÆ·¼¯ºÏ
+	//	è´­ç‰©è½¦ä¸­æ‰€æœ‰å•†å“é›†åˆ
 	private Map<String, CartItem> cartitem = new HashMap<String, CartItem>();
-//	¹ºÎï³µÖĞÉÌÆ·×Ü¼Æ
+	//	è´­ç‰©è½¦ä¸­å•†å“æ€»è®¡
 	private double total;
 }

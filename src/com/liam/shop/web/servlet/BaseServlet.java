@@ -24,23 +24,22 @@ public class BaseServlet extends HttpServlet {
 	}
 
 	/**
-	 * -ÀûÓÃ·´Éä,Ìæ´úProductServletºÍUserSerlvetµÄ¶îÍâ¿ªÏú,½µµÍ´úÂëÈßÓà
-	 *
+	 * -åˆ©ç”¨åå°„,æ›¿ä»£ProductServletå’ŒUserSerlvetçš„é¢å¤–å¼€é”€,é™ä½ä»£ç å†—ä½™
 	 */
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		try {
-//		»ñÈ¡ÇëÇóÖĞµÄ·½·¨
+//		è·å–è¯·æ±‚ä¸­çš„æ–¹æ³•
 			String methodName = request.getParameter("method");
 
-//		Ê¹ÓÃ·´ÉäÊµÏÖÍ¨¹ı·½·¨Ãû×ÖµÃµ½·½·¨¶ÔÏó,Ê¹ÓÃ·½·¨¶ÔÏóÖ´ĞĞ·½·¨
-//			µÃµ½ÇëÇóµÄ×Ö½ÚÂë
+//		ä½¿ç”¨åå°„å®ç°é€šè¿‡æ–¹æ³•åå­—å¾—åˆ°æ–¹æ³•å¯¹è±¡,ä½¿ç”¨æ–¹æ³•å¯¹è±¡æ‰§è¡Œæ–¹æ³•
+//			å¾—åˆ°è¯·æ±‚çš„å­—èŠ‚ç 
 			Class<? extends BaseServlet> clazz = this.getClass();
-			
-//			¸ù¾İ×Ö½ÚÂëºÍ·½·¨Ãû»ñÈ¡·½·¨¶ÔÏó
+
+//			æ ¹æ®å­—èŠ‚ç å’Œæ–¹æ³•åè·å–æ–¹æ³•å¯¹è±¡
 			Method method = clazz.getMethod(methodName, HttpServletRequest.class, HttpServletResponse.class);
-//			Ö´ĞĞ·½·¨
+//			æ‰§è¡Œæ–¹æ³•
 			method.invoke(this, request, response);
 
 		} catch (NoSuchMethodException e) {

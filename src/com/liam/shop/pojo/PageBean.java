@@ -17,21 +17,21 @@ import lombok.ToString;
 @ToString
 @Data
 public class PageBean<E> {
-	
-	// µ±Ç°µÚ¼¸Ò³ 
-	private int currentPage;
-	// Ã¿Ò³ÊıÁ¿
-	private int currentCount;
-	// ×ÜÒ³Êı
-	private int totalPage;
-	// ×ÜÌõÄ¿Êı 
-	private int totalCount;
-	// ¶ÔÏóµÄ¼¯ºÏ
-	private List<E> list;
-	
-	// ·ÖÒ³¿ªÊ¼
-	int start;
-	int end;
-	
+
+    // å½“å‰ç¬¬å‡ é¡µ
+    private int currentPage;
+    // æ¯é¡µæ•°é‡
+    private int currentCount;
+    // æ€»é¡µæ•°
+    private int totalPage;
+    // æ€»æ¡ç›®æ•°
+    private int totalCount;
+    // å¯¹è±¡çš„é›†åˆ
+    private List<E> list;
+
+    // åˆ†é¡µå¼€å§‹
+    int start;
+    int end;
+
 
 }

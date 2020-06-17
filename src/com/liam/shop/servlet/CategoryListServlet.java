@@ -30,49 +30,46 @@ public class CategoryListServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-//		»ñÈ¡²ÎÊı
-//		µ÷ÓÃservice²ã²éÑ¯Êı¾İ
-//		ÅĞ¶ÏredisÖĞÓĞÎŞ·ÖÀàµÄ»º´æĞÅÏ¢,ÓĞÔòÖ±½Óµ÷ÓÃ,Ã»ÓĞÔò²éÑ¯Êı¾İ¿â
-		Jedis redis = JedisPoolUtils.getJedis();
-		String categoryListJson = redis.get("categoryListJson");
-		
-		if (categoryListJson == null) {
-			System.out.println("ÎŞ»º´æ,ĞèÒª²éÑ¯Êı¾İ¿â");
-			
-//			²éÑ¯Êı¾İ¿â
-			ProductService service = new ProductServiceImpl();
-			List<Category> categoryList = service.findAllCategorys();
-//			×ª»¯ÎªjsonÊı¾İ¸ñÊ½
-			Gson gson = new Gson();
-			categoryListJson = gson.toJson(categoryList);//´«ÈëµÄ±äÁ¿²»¿ÉÒÔ¼ÓË«ÒıºÅ
-			
-//			»º´æµ½redisÖĞ
-			redis.set("categoryListJson", categoryListJson);
-			
-		}else {
-			System.out.println("ÓĞRedis»º´æ,Ö±½Óµ÷ÓÃredis");
-		}
-		redis.close();
-		
-		response.setContentType("text/html;charset=utf-8");
-		PrintWriter pw = response.getWriter();
-		pw.write(categoryListJson);
-		
-		
-		
-		
-		
-//		Ê¹ÓÃAjax»ñÈ¡·ÖÀàÁĞ±í
-////		»ñÈ¡²ÎÊı
-////		µ÷ÓÃservice²ã²éÑ¯
+
+//		è·å–å‚æ•°
+//		è°ƒç”¨serviceå±‚æŸ¥è¯¢æ•°æ®
+//		åˆ¤æ–­redisä¸­æœ‰æ— åˆ†ç±»çš„ç¼“å­˜ä¿¡æ¯,æœ‰åˆ™ç›´æ¥è°ƒç”¨,æ²¡æœ‰åˆ™æŸ¥è¯¢æ•°æ®åº“
+        Jedis redis = JedisPoolUtils.getJedis();
+        String categoryListJson = redis.get("categoryListJson");
+
+        if (categoryListJson == null) {
+            System.out.println("æ— ç¼“å­˜,éœ€è¦æŸ¥è¯¢æ•°æ®åº“");
+
+//			æŸ¥è¯¢æ•°æ®åº“
+            ProductService service = new ProductServiceImpl();
+            List<Category> categoryList = service.findAllCategorys();
+//			è½¬åŒ–ä¸ºjsonæ•°æ®æ ¼å¼
+            Gson gson = new Gson();
+            categoryListJson = gson.toJson(categoryList);//ä¼ å…¥çš„å˜é‡ä¸å¯ä»¥åŠ åŒå¼•å·
+
+//			ç¼“å­˜åˆ°redisä¸­
+            redis.set("categoryListJson", categoryListJson);
+
+        } else {
+            System.out.println("æœ‰Redisç¼“å­˜,ç›´æ¥è°ƒç”¨redis");
+        }
+        redis.close();
+
+        response.setContentType("text/html;charset=utf-8");
+        PrintWriter pw = response.getWriter();
+        pw.write(categoryListJson);
+
+
+//		ä½¿ç”¨Ajaxè·å–åˆ†ç±»åˆ—è¡¨
+////		è·å–å‚æ•°
+////		è°ƒç”¨serviceå±‚æŸ¥è¯¢
 //		ProductService service = new ProductServiceImpl();
 //		List<Category> categoryList = service.findAllCategorys();
-////		ÀûÓÃGson¹¤¾ß½«categoryList×ª»»ÎªJsonÊı¾İ¸ñÊ½
+////		åˆ©ç”¨Gsonå·¥å…·å°†categoryListè½¬æ¢ä¸ºJsonæ•°æ®æ ¼å¼
 //		Gson gson = new Gson();
 //		String categoryListJson = gson.toJson(categoryList);
 //
-////		ÏÔÊ¾
+////		æ˜¾ç¤º
 //		response.setContentType("text/html;charset=utf-8");
 //		PrintWriter pw = response.getWriter();
 //		pw.write(categoryListJson);

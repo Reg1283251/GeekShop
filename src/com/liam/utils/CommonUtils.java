@@ -5,7 +5,7 @@ import java.util.UUID;
 public class CommonUtils {
 	
 	/**
-	 * @return 返回随机生成的UUID
+	 * @return 杩斿洖闅忔満鐢熸垚鐨刄UID
 	 */
 	public static String getUUID() {
 		

@@ -23,19 +23,19 @@ public class IndexServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-//		µ÷ÓÃservice²ã
+
+//		è°ƒç”¨serviceå±‚
 		ProductServiceImpl service = new ProductServiceImpl();
 		List<Product> hotProducts = service.findHotProducts();
 		List<Product> newProducts = service.findNewProducts();
 //		List<Category> categoryList = service.findAllCategorys();
-		
-//		ÉèÖÃÒ³ÃæÊôĞÔ		
+
+//		è®¾ç½®é¡µé¢å±æ€§		
 		request.setAttribute("hotProducts", hotProducts);
 		request.setAttribute("newProducts", newProducts);
 //		request.setAttribute("categoryList", categoryList);
-		
-//		ÇëÇó×ª·¢Ê×Ò³
+
+//		è¯·æ±‚è½¬å‘é¦–é¡µ
 		request.getRequestDispatcher("/index.jsp").forward(request, response);
 	}
 

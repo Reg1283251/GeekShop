@@ -13,7 +13,7 @@ import com.liam.shop.service.ProductService;
 public class ProductServiceImpl implements ProductService {
 
 	/**
-	 * -²éÑ¯ÈÈÃÅÉÌÆ·
+	 * -æŸ¥è¯¢çƒ­é—¨å•†å“
 	 */
 	@Override
 	public List<Product> findHotProducts() {
@@ -29,7 +29,7 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	/**
-	 * -²éÑ¯×îĞÂÉÌÆ·
+	 * -æŸ¥è¯¢æœ€æ–°å•†å“
 	 */
 	@Override
 	public List<Product> findNewProducts() {
@@ -45,7 +45,7 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	/**
-	 * -²éÑ¯ËùÓĞÉÌÆ··ÖÀà
+	 * -æŸ¥è¯¢æ‰€æœ‰å•†å“åˆ†ç±»
 	 */
 	@Override
 	public List<Category> findAllCategorys() {
@@ -62,22 +62,22 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	/**
-	 * -²éÑ¯·ÖÒ³ĞÅÏ¢
+	 * -æŸ¥è¯¢åˆ†é¡µä¿¡æ¯
 	 */
 	@Override
 	public PageBean<Product> findProductByCid(String cid, int currentPage, int currentCount) {
 
-//		1.ÊµÀı»¯Ò»¸öPageBeanÓÃÀ´´æ·Å·ÖÒ³Êı¾İ
+//		1.å®ä¾‹åŒ–ä¸€ä¸ªPageBeanç”¨æ¥å­˜æ”¾åˆ†é¡µæ•°æ®
 		PageBean<Product> pageBean = new PageBean<Product>();
 
-//		2.ÉèÖÃcurrentPageµ±Ç°Ò³
+//		2.è®¾ç½®currentPageå½“å‰é¡µ
 		pageBean.setCurrentPage(currentPage);
 
-//		3.ÉèÖÃcurrentCountÃ¿Ò³ÉÌÆ·µÄÊıÁ¿
+//		3.è®¾ç½®currentCountæ¯é¡µå•†å“çš„æ•°é‡
 		pageBean.setCurrentCount(currentCount);
 
-//		4.»ñÈ¡×ÜÌõÄ¿Êı²¢¼ÆËã³ö×ÜÒ³Êı,×ÜÒ³Êı=(×ÜÉÌÆ·Êı/Ã¿Ò³µÄÉÌÆ·Êı)
-//		a).»ñÈ¡×ÜÌõÄ¿Êı
+//		4.è·å–æ€»æ¡ç›®æ•°å¹¶è®¡ç®—å‡ºæ€»é¡µæ•°,æ€»é¡µæ•°=(æ€»å•†å“æ•°/æ¯é¡µçš„å•†å“æ•°)
+//		a).è·å–æ€»æ¡ç›®æ•°
 		IProductDao dao = new IProductDaoImpl();
 		int totalCount = 0;
 		try {
@@ -88,12 +88,12 @@ public class ProductServiceImpl implements ProductService {
 		}
 		pageBean.setTotalCount(totalCount);
 
-//		b).¼ÆËã×ÜÒ³Êı
+//		b).è®¡ç®—æ€»é¡µæ•°
 		pageBean.setTotalPage((int) Math.ceil(1.0 * (totalCount / currentCount)));
 
-//		5.»ñÈ¡Ã¿Ò³µÄÉÌÆ·ÏêÇé
-//		startÆğÊ¼Ò³ÏÂ±ê
-//		Èç¹ûcurrentPageÊÇµÚÒ»Ò³,ÔòstartÊÇ0,´ú±í(0~11)Èç¹ûÊÇµÚ¶şÒ³,Ôòstart´Ó12¿ªÊ¼,´ú±í(12~23))
+//		5.è·å–æ¯é¡µçš„å•†å“è¯¦æƒ…
+//		startèµ·å§‹é¡µä¸‹æ ‡
+//		å¦‚æœcurrentPageæ˜¯ç¬¬ä¸€é¡µ,åˆ™startæ˜¯0,ä»£è¡¨(0~11)å¦‚æœæ˜¯ç¬¬äºŒé¡µ,åˆ™startä»12å¼€å§‹,ä»£è¡¨(12~23))
 		int start = (currentPage - 1) * currentCount;
 		List<Product> list = null;
 		try {
@@ -101,15 +101,15 @@ public class ProductServiceImpl implements ProductService {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-//		ÉèÖÃList
+//		è®¾ç½®List
 		pageBean.setList(list);
 
-//		·µ»ØpageBean¶ÔÏó
+//		è¿”å›pageBeanå¯¹è±¡
 		return pageBean;
 	}
 
 	/**
-	 * -¸ù¾İpid·µ»ØÉÌÆ·ÏêÏ¸ĞÅÏ¢
+	 * -æ ¹æ®pidè¿”å›å•†å“è¯¦ç»†ä¿¡æ¯
 	 */
 	@Override
 	public Product findProductByID(String pid) {
@@ -124,7 +124,7 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	/**
-	 * -²éÑ¯µ¥¸ö·ÖÀàĞÅÏ¢
+	 * -æŸ¥è¯¢å•ä¸ªåˆ†ç±»ä¿¡æ¯
 	 */
 	@Override
 	public Category findCategoryByCid(String cid) {

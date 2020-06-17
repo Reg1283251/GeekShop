@@ -38,7 +38,7 @@ public class ActiveServlet extends HttpServlet {
 			response.sendRedirect(request.getContextPath()+"/login.jsp");
 		}
 		else {
-			response.getWriter().println("¼¤»îÊ§°Ü");
+			response.getWriter().println("æ¿€æ´»å¤±è´¥");
 		}
 		
 	}

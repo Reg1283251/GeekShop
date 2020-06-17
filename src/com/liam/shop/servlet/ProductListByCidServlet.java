@@ -34,50 +34,50 @@ public class ProductListByCidServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		»ñÈ¡ÉÌÆ·Àà±ğid
-		String cid = request.getParameter("cid");//ÉÌÆ·±àºÅ
-		String cpage = request.getParameter("currentPage");//µ±Ç°Ò³Âë
-		
-		int currentPage = 1;//Ä¬ÈÏµÚÒ»Ò³
-//		ÅĞ¶ÏcpageÊÇ·ñÎª¿Õ
-		if (cpage != null && Integer.parseInt(cpage)>0) {
+//		è·å–å•†å“ç±»åˆ«id
+		String cid = request.getParameter("cid");//å•†å“ç¼–å·
+		String cpage = request.getParameter("currentPage");//å½“å‰é¡µç 
+
+		int currentPage = 1;//é»˜è®¤ç¬¬ä¸€é¡µ
+//		åˆ¤æ–­cpageæ˜¯å¦ä¸ºç©º
+		if (cpage != null && Integer.parseInt(cpage) > 0) {
 			currentPage = Integer.parseInt(cpage);
 		}
-		int currentCount = 6;//Ã¿Ò³6¸öÉÌÆ·
-		
-//		µ÷ÓÃservice²ã
+		int currentCount = 6;//æ¯é¡µ6ä¸ªå•†å“
+
+//		è°ƒç”¨serviceå±‚
 		ProductService service = new ProductServiceImpl();
-		
-//		µ÷ÓÃservice²ãµÄ·½·¨²éÑ¯
+
+//		è°ƒç”¨serviceå±‚çš„æ–¹æ³•æŸ¥è¯¢
 		PageBean<Product> pageBean = service.findProductByCid(cid, currentPage, currentCount);
-		
-//		»ñÈ¡cookieÖĞµÄpid
+
+//		è·å–cookieä¸­çš„pid
 		Cookie[] cookies = request.getCookies();
 		List<Product> historyList = new ArrayList<Product>();
 		if (cookies != null) {
-			
-			for (Cookie c: cookies) {
+
+			for (Cookie c : cookies) {
 				if ("pids".equals(c.getName())) {
 					String pids = c.getValue();
 					String[] pidarr = pids.split("-");
 					for (String p : pidarr) {
-						Product product =service.findProductByID(p);
+						Product product = service.findProductByID(p);
 						historyList.add(product);
 					}
 				}
 			}
-			
+
 		}
-		
-		
-//		½«²éÑ¯½á¹û´æ·ÅÖÁÇëÇóµ±ÖĞ
+
+
+//		å°†æŸ¥è¯¢ç»“æœå­˜æ”¾è‡³è¯·æ±‚å½“ä¸­
 		request.setAttribute("pageBean", pageBean);
 		request.setAttribute("cid", cid);
 		request.setAttribute("historyList", historyList);
-		
-//		½«ÇëÇóÒÔ¼°²ÎÊı×ª·¢ÖÁproduct_list.jspÖĞ
+
+//		å°†è¯·æ±‚ä»¥åŠå‚æ•°è½¬å‘è‡³product_list.jspä¸­
 		request.getRequestDispatcher("/product_list.jsp").forward(request, response);
-		
+
 	}
 
 	/**

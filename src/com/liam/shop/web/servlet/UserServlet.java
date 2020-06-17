@@ -43,7 +43,7 @@ public class UserServlet extends BaseServlet {
 //	 */
 //	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 //			throws ServletException, IOException {
-////		»ñÈ¡requestÓòÖĞmethodÊôĞÔ
+////		è·å–requeståŸŸä¸­methodå±æ€§
 //		String methodName = request.getParameter("method");
 //
 //		if ("active".equals(methodName)) {
@@ -56,24 +56,24 @@ public class UserServlet extends BaseServlet {
 //	}
 
 	public void userregister(HttpServletRequest request, HttpServletResponse response) throws IOException {
-//		»ñÈ¡op²ÎÊı
+//		è·å–opå‚æ•°
 		String op = request.getParameter("op");
 		System.out.println(op);
-//		ÅĞ¶ÏopÀ´½øĞĞ¾ßÌåµÄ²Ù×÷
+//		åˆ¤æ–­opæ¥è¿›è¡Œå…·ä½“çš„æ“ä½œ
 		if ("register".equals(op)) {
 			System.out.println("register");
-//			×¢²á²Ù×÷
-//		1.½ÓÊÕ²ÎÊı
+//			æ³¨å†Œæ“ä½œ
+//		1.æ¥æ”¶å‚æ•°
 			User user = new User();
 
-//		Ê¹ÓÃbeanUtils
-//		×ª»»ÈÕÆÚ¸ñÊ½
+//		ä½¿ç”¨beanUtils
+//		è½¬æ¢æ—¥æœŸæ ¼å¼
 			DateConverter dateconvert = new DateConverter();
-			dateconvert.setPatterns(new String[] { "yyyy-MM-dd", "yyyy/MM/dd" });
+			dateconvert.setPatterns(new String[]{"yyyy-MM-dd", "yyyy/MM/dd"});
 			ConvertUtils.register(dateconvert, Date.class);
 
 			try {
-//			¿½±´ÇëÇóÀïµÄ²ÎÊı
+//			æ‹·è´è¯·æ±‚é‡Œçš„å‚æ•°
 				BeanUtils.copyProperties(user, request.getParameterMap());
 			} catch (IllegalAccessException e) {
 				e.printStackTrace();
@@ -81,24 +81,24 @@ public class UserServlet extends BaseServlet {
 				e.printStackTrace();
 			}
 
-//		Éú³ÉÒ»¸öUID
+//		ç”Ÿæˆä¸€ä¸ªUID
 			user.setUid(CommonUtils.getUUID());
-//		Éú³ÉÒ»¸ö¼¤»îÂë
+//		ç”Ÿæˆä¸€ä¸ªæ¿€æ´»ç 
 			user.setCode(CommonUtils.getUUID());
-//		ÒÔÉÏ£¬²ÎÊıÉèÖÃÍê±Ï
+//		ä»¥ä¸Šï¼Œå‚æ•°è®¾ç½®å®Œæ¯•
 
-//		2.µ÷ÓÃservice²ã´¦Àí
+//		2.è°ƒç”¨serviceå±‚å¤„ç†
 			UserService service = new IUserServiceImpl();
 			int result = service.register(user);
 
-//		3.ÖØ¶¨Ïò»òÕßÇëÇó×ª·¢ ½«´¦Àí½á¹û½»¸øjspÒ³Ãæ
+//		3.é‡å®šå‘æˆ–è€…è¯·æ±‚è½¬å‘ å°†å¤„ç†ç»“æœäº¤ç»™jspé¡µé¢
 			if (result > 0) {
 				try {
 					// String subject, String email, String emailMsg
-					MailUtils.sendMail("¼«¿ÍÉÌ³Ç»áÔ±¼¤»î", user.getEmail(),
-							"×£ºØ" + user.getUsername()
-									+ "£¬×¢²á³É¹¦,µã»÷Á´½Ó¼¤»î<a href=\"http://localhost:6080/GeekShop/active?op=active&code="
-									+ user.getCode() + "\">¼¤»î»áÔ±</a>");
+					MailUtils.sendMail("æå®¢å•†åŸä¼šå‘˜æ¿€æ´»", user.getEmail(),
+							"ç¥è´º" + user.getUsername()
+									+ "ï¼Œæ³¨å†ŒæˆåŠŸ,ç‚¹å‡»é“¾æ¥æ¿€æ´»<a href=\"http://localhost:6080/GeekShop/active?op=active&code="
+									+ user.getCode() + "\">æ¿€æ´»ä¼šå‘˜</a>");
 				} catch (AddressException e) {
 					e.printStackTrace();
 				} catch (MessagingException e) {
@@ -109,7 +109,7 @@ public class UserServlet extends BaseServlet {
 				response.sendRedirect("registerFail.jsp");
 			}
 		} else if ("active".equals(op)) {
-//			¼¤»î²Ù×÷
+//			æ¿€æ´»æ“ä½œ
 			System.out.println("active");
 		}
 	}
@@ -121,7 +121,7 @@ public class UserServlet extends BaseServlet {
 		String username = request.getParameter("username");
 		String msg = "";
 		if (username == null) {
-			msg = "{\"error\":\"Ã»ÓĞ´«ÈëÓÃ»§Ãû\"}";
+			msg = "{\"error\":\"æ²¡æœ‰ä¼ å…¥ç”¨æˆ·å\"}";
 		} else {
 //			2
 			UserService is = new IUserServiceImpl();
@@ -141,7 +141,7 @@ public class UserServlet extends BaseServlet {
 		if (result > 0) {
 			response.sendRedirect(request.getContextPath() + "/login.jsp");
 		} else {
-			response.getWriter().println("¼¤»îÊ§°Ü");
+			response.getWriter().println("æ¿€æ´»å¤±è´¥");
 		}
 	}
 

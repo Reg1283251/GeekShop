@@ -12,7 +12,7 @@ import java.util.List;
 
 class IProductDaoTest {
 
-//	dao²ã²âÊÔÀà
+//	daoå±‚æµ‹è¯•ç±»
 
 	@Test
 	void testFindHotProducts() throws SQLException {

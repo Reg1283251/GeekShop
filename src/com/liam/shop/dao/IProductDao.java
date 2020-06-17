@@ -8,44 +8,50 @@ import com.liam.shop.pojo.Product;
 
 public interface IProductDao {
 	/**
-	 * -²éÑ¯×îÈÈÉÌÆ·
-	 * @return 
+	 * -æŸ¥è¯¢æœ€çƒ­å•†å“
+	 *
+	 * @return
 	 * @throws SQLException
 	 */
 	List<Product> findHotProducts() throws SQLException;
-	
+
 	/**
-	 * -²éÑ¯×îĞÂÉÌÆ·
+	 * -æŸ¥è¯¢æœ€æ–°å•†å“
+	 *
 	 * @return
 	 * @throws SQLException
 	 */
 	List<Product> findNewProducts() throws SQLException;
-	
+
 	/**
-	 * -²éÑ¯ËùÓĞÉÌÆ··ÖÀà
+	 * -æŸ¥è¯¢æ‰€æœ‰å•†å“åˆ†ç±»
+	 *
 	 * @return
 	 * @throws SQLException
 	 */
 	List<Category> findAllCategorys() throws SQLException;
-	
+
 	/**
-	 * -²éÑ¯µ¥¸öÉÌÆ··ÖÀà
+	 * -æŸ¥è¯¢å•ä¸ªå•†å“åˆ†ç±»
+	 *
 	 * @param cid
 	 * @return
 	 * @throws SQLException
 	 */
 	Category findCategoryByCid(String cid) throws SQLException;
-	
+
 	/**
-	 * -¸ù¾İ·ÖÀàID²éÑ¯·ÖÀàÏÂÉÌÆ·ÊıÁ¿
+	 * -æ ¹æ®åˆ†ç±»IDæŸ¥è¯¢åˆ†ç±»ä¸‹å•†å“æ•°é‡
+	 *
 	 * @param cid
 	 * @return
 	 * @throws SQLException
 	 */
 	int getCount(String cid) throws SQLException;
-	
+
 	/**
-	 * -²éÑ¯Ä³·ÖÀàÏÂµÄÉÌÆ·µÄ·ÖÒ³ĞÅÏ¢
+	 * -æŸ¥è¯¢æŸåˆ†ç±»ä¸‹çš„å•†å“çš„åˆ†é¡µä¿¡æ¯
+	 *
 	 * @param cid
 	 * @param start
 	 * @param count
@@ -53,9 +59,10 @@ public interface IProductDao {
 	 * @throws SQLException
 	 */
 	List<Product> findProductListByPage(String cid, int start, int count) throws SQLException;
-	
+
 	/**
-	 * -¸ù¾İPID²éÕÒÉÌÆ·ĞÅÏ¢
+	 * -æ ¹æ®PIDæŸ¥æ‰¾å•†å“ä¿¡æ¯
+	 *
 	 * @param pid
 	 * @return
 	 * @throws SQLException

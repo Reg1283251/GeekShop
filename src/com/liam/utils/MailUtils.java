@@ -13,55 +13,52 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMessage.RecipientType;
 /**
- * 
-* @ClassName: MailUtils  
-* @Description: ·¢ËÍÓÊ¼ş¸¨ÖúÀà
-* @date 2017Äê12ÔÂ12ÈÕ ÏÂÎç4:17:25    
-* Company www.igeekhome.com
-*
+ * @ClassName: MailUtils
+ * @Description: å‘é€é‚®ä»¶è¾…åŠ©ç±»
+ * @date 2017å¹´12æœˆ12æ—¥ ä¸‹åˆ4:17:25
+ * Company www.igeekhome.com
  */
 public class MailUtils {
-	/**
-	 * 
-	* @Title: sendMail  
-	* @Description: ÊµÏÖ·¢ËÍÓÊ¼ş
-	* @param email£º½ÓÊÕÓÊ¼şµÄµØÖ·
-	* @param emailMsg£º·¢ËÍÓÊ¼şµÄÄÚÈİ
-	* @throws AddressException
-	* @throws MessagingException
-	 */
-	public static void sendMail(String subject, String email, String emailMsg)
-			throws AddressException, MessagingException {
-		// 1.´´½¨Ò»¸ö³ÌĞòÓëÓÊ¼ş·şÎñÆ÷»á»°¶ÔÏó Session
+    /**
+     * @param emailï¼šæ¥æ”¶é‚®ä»¶çš„åœ°å€
+     * @param emailMsgï¼šå‘é€é‚®ä»¶çš„å†…å®¹
+     * @throws AddressException
+     * @throws MessagingException
+     * @Title: sendMail
+     * @Description: å®ç°å‘é€é‚®ä»¶
+     */
+    public static void sendMail(String subject, String email, String emailMsg)
+            throws AddressException, MessagingException {
+        // 1.åˆ›å»ºä¸€ä¸ªç¨‹åºä¸é‚®ä»¶æœåŠ¡å™¨ä¼šè¯å¯¹è±¡ Session
 
-		Properties props = new Properties();
-		props.setProperty("mail.transport.protocol", "SMTP");
-		props.setProperty("mail.host", "smtp.126.com");
-		props.setProperty("mail.smtp.auth", "true");// Ö¸¶¨ÑéÖ¤Îªtrue
+        Properties props = new Properties();
+        props.setProperty("mail.transport.protocol", "SMTP");
+        props.setProperty("mail.host", "smtp.126.com");
+        props.setProperty("mail.smtp.auth", "true");// æŒ‡å®šéªŒè¯ä¸ºtrue
 
-		// ´´½¨ÑéÖ¤Æ÷
-		Authenticator auth = new Authenticator() {
-			public PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication("litong0328@126.com", "root123");//ÊÚÈ¨Âë
-			}
-		};
+        // åˆ›å»ºéªŒè¯å™¨
+        Authenticator auth = new Authenticator() {
+            public PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication("litong0328@126.com", "root123");//æˆæƒç 
+            }
+        };
 
-		Session session = Session.getInstance(props, auth);
+        Session session = Session.getInstance(props, auth);
 
-		// 2.´´½¨Ò»¸öMessage£¬ËüÏàµ±ÓÚÊÇÓÊ¼şÄÚÈİ
-		Message message = new MimeMessage(session);
+        // 2.åˆ›å»ºä¸€ä¸ªMessageï¼Œå®ƒç›¸å½“äºæ˜¯é‚®ä»¶å†…å®¹
+        Message message = new MimeMessage(session);
 
-		message.setFrom(new InternetAddress("litong0328@126.com")); // ÉèÖÃ·¢ËÍÕß
+        message.setFrom(new InternetAddress("litong0328@126.com")); // è®¾ç½®å‘é€è€…
 
-		message.setRecipient(RecipientType.TO, new InternetAddress(email)); // ÉèÖÃ·¢ËÍ·½Ê½Óë½ÓÊÕÕß
+        message.setRecipient(RecipientType.TO, new InternetAddress(email)); // è®¾ç½®å‘é€æ–¹å¼ä¸æ¥æ”¶è€…
 
-		message.setSubject(subject);
-		// message.setText("ÕâÊÇÒ»·â¼¤»îÓÊ¼ş£¬Çë<a href='#'>µã»÷</a>");
+        message.setSubject(subject);
+        // message.setText("è¿™æ˜¯ä¸€å°æ¿€æ´»é‚®ä»¶ï¼Œè¯·<a href='#'>ç‚¹å‡»</a>");
 
-		message.setContent(emailMsg, "text/html;charset=utf-8");
+        message.setContent(emailMsg, "text/html;charset=utf-8");
 
-		// 3.´´½¨ TransportÓÃÓÚ½«ÓÊ¼ş·¢ËÍ
+        // 3.åˆ›å»º Transportç”¨äºå°†é‚®ä»¶å‘é€
 
-		Transport.send(message);
-	}
+        Transport.send(message);
+    }
 }

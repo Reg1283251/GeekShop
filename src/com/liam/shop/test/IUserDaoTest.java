@@ -16,24 +16,24 @@ class IUserDaoTest {
 
 	@Test
 	void testInsert() throws SQLException {
-		
-//		µ÷ÓÃ¹¤¾ßÀà»ñÈ¡uuid
+
+//		è°ƒç”¨å·¥å…·ç±»è·å–uuid
 		String uid = CommonUtils.getUUID();
-		
-//		ÊµÀı»¯Ò»¸ö²âÊÔÓÃ»§
+
+//		å®ä¾‹åŒ–ä¸€ä¸ªæµ‹è¯•ç”¨æˆ·
 		User user = new User(
-					uid,"liam","1234","ÀîÍ¯",
-					"tunglee0328@gmail.com","12313131321",new Date(),"ÄĞ",0,CommonUtils.getUUID()
-				);
-		
-//		ÊµÀı»¯dao²ã½Ó¿Ú
+				uid, "liam", "1234", "æç«¥",
+				"tunglee0328@gmail.com", "12313131321", new Date(), "ç”·", 0, CommonUtils.getUUID()
+		);
+
+//		å®ä¾‹åŒ–daoå±‚æ¥å£
 		IUserDao dao = new IUserDaoImpl();
-//		²âÊÔdaoµÈµÄinsert·½·¨£¬´«Èë²âÊÔÓÃ»§
+//		æµ‹è¯•daoç­‰çš„insertæ–¹æ³•ï¼Œä¼ å…¥æµ‹è¯•ç”¨æˆ·
 		int result = dao.insert(user);
-		
-//		¶ÏÑÔ²âÊÔsqlÓï¾ä²Ù×÷ĞĞÊıÊÇ·ñ´óÓÚ0
-		TestCase.assertTrue(result>0);
-		
+
+//		æ–­è¨€æµ‹è¯•sqlè¯­å¥æ“ä½œè¡Œæ•°æ˜¯å¦å¤§äº0
+		TestCase.assertTrue(result > 0);
+
 	}
 	
 	@Test

@@ -13,35 +13,33 @@ public class JedisPoolUtils {
 	private static JedisPool pool = null;
 	
 	static{
-		
-		//¼ÓÔØÅäÖÃÎÄ¼ş
-		InputStream in = JedisPoolUtils.class.getClassLoader().getResourceAsStream("redis.properties");
-		Properties pro = new Properties();
-		try {
-			pro.load(in);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-		//»ñµÃ³Ø×Ó¶ÔÏó
-		JedisPoolConfig poolConfig = new JedisPoolConfig();
-		poolConfig.setMaxIdle(Integer.parseInt(pro.get("redis.maxIdle").toString()));//×î´óÏĞÖÃ¸öÊı
-		poolConfig.setMinIdle(Integer.parseInt(pro.get("redis.minIdle").toString()));//×îĞ¡ÏĞÖÃ¸öÊı
-		poolConfig.setMaxTotal(Integer.parseInt(pro.get("redis.maxTotal").toString()));//×î´óÁ¬½ÓÊı
-		pool = new JedisPool(poolConfig,pro.getProperty("redis.url") , Integer.parseInt(pro.get("redis.port").toString()));
-	}
 
-	//»ñµÃjedis×ÊÔ´µÄ·½·¨
-	public static Jedis getJedis(){
-		return pool.getResource();
-	}
-	
-	public static void main(String[] args) {
-		Jedis jedis = getJedis();
-		System.out.println(jedis.get("xxx"));
-	}
-	
-	
-	
-	
+        //åŠ è½½é…ç½®æ–‡ä»¶
+        InputStream in = JedisPoolUtils.class.getClassLoader().getResourceAsStream("redis.properties");
+        Properties pro = new Properties();
+        try {
+            pro.load(in);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        //è·å¾—æ± å­å¯¹è±¡
+        JedisPoolConfig poolConfig = new JedisPoolConfig();
+        poolConfig.setMaxIdle(Integer.parseInt(pro.get("redis.maxIdle").toString()));//æœ€å¤§é—²ç½®ä¸ªæ•°
+        poolConfig.setMinIdle(Integer.parseInt(pro.get("redis.minIdle").toString()));//æœ€å°é—²ç½®ä¸ªæ•°
+        poolConfig.setMaxTotal(Integer.parseInt(pro.get("redis.maxTotal").toString()));//æœ€å¤§è¿æ¥æ•°
+        pool = new JedisPool(poolConfig, pro.getProperty("redis.url"), Integer.parseInt(pro.get("redis.port").toString()));
+    }
+
+    //è·å¾—jedisèµ„æºçš„æ–¹æ³•
+    public static Jedis getJedis() {
+        return pool.getResource();
+    }
+
+    public static void main(String[] args) {
+        Jedis jedis = getJedis();
+        System.out.println(jedis.get("xxx"));
+    }
+
+
 }

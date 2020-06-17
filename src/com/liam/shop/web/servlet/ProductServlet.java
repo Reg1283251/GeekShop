@@ -46,10 +46,10 @@ public class ProductServlet extends BaseServlet {
 
 //	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 //			throws ServletException, IOException {
-////		»ñÈ¡requestÓòÖĞmethodÊôĞÔ
+////		è·å–requeståŸŸä¸­methodå±æ€§
 //		String methodName = request.getParameter("method");
 //
-////		ÕâÀïÅĞ¶ÏmethodÊôĞÔµÄÖµ
+////		è¿™é‡Œåˆ¤æ–­methodå±æ€§çš„å€¼
 //		if ("categoryList".equals(methodName)) {
 //			categoryList(request, response);
 //		} else if ("index".equals(methodName)) {
@@ -63,17 +63,17 @@ public class ProductServlet extends BaseServlet {
 
 	public void productListByCid(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-//		»ñÈ¡ÉÌÆ·Àà±ğid
-		String cid = request.getParameter("cid");// ÉÌÆ·±àºÅ
-		String cpage = request.getParameter("currentPage");// µ±Ç°Ò³Âë
+//		è·å–å•†å“ç±»åˆ«id
+		String cid = request.getParameter("cid");// å•†å“ç¼–å·
+		String cpage = request.getParameter("currentPage");// å½“å‰é¡µç 
 
-		int currentPage = 1;// Ä¬ÈÏµÚÒ»Ò³
-//		µ÷ÓÃservice²ã
+		int currentPage = 1;// é»˜è®¤ç¬¬ä¸€é¡µ
+//		è°ƒç”¨serviceå±‚
 		ProductService service = new ProductServiceImpl();
-//		ÉèÖÃ·ÖÒ³
+//		è®¾ç½®åˆ†é¡µ
 		PageBean<Product> pageBean = paging(currentPage, cid, cpage, service);
 
-//		»ñÈ¡cookieÖĞµÄpid
+//		è·å–cookieä¸­çš„pid
 		Cookie[] cookies = request.getCookies();
 		List<Product> historyList = new ArrayList<Product>();
 		if (cookies != null) {
@@ -91,43 +91,43 @@ public class ProductServlet extends BaseServlet {
 
 		}
 
-//		½«²éÑ¯½á¹û´æ·ÅÖÁÇëÇóµ±ÖĞ
+//		å°†æŸ¥è¯¢ç»“æœå­˜æ”¾è‡³è¯·æ±‚å½“ä¸­
 		request.setAttribute("pageBean", pageBean);
 		request.setAttribute("cid", cid);
 		request.setAttribute("historyList", historyList);
 		request.setAttribute("currentPage", cpage);
 
-//		½«ÇëÇóÒÔ¼°²ÎÊı×ª·¢ÖÁproduct_list.jspÖĞ
+//		å°†è¯·æ±‚ä»¥åŠå‚æ•°è½¬å‘è‡³product_list.jspä¸­
 		request.getRequestDispatcher("/product_list.jsp").forward(request, response);
 	}
 
 	private PageBean<Product> paging(int currentPage, String cid, String cpage, ProductService service) {
-//		ÅĞ¶ÏcpageÊÇ·ñÎª¿Õ
+//		åˆ¤æ–­cpageæ˜¯å¦ä¸ºç©º
 		if (cpage != null && Integer.parseInt(cpage) > 0) {
 			currentPage = Integer.parseInt(cpage);
 		}
-		int currentCount = 6;// Ã¿Ò³6¸öÉÌÆ·
+		int currentCount = 6;// æ¯é¡µ6ä¸ªå•†å“
 
-//		µ÷ÓÃservice²ãµÄ·½·¨²éÑ¯
+//		è°ƒç”¨serviceå±‚çš„æ–¹æ³•æŸ¥è¯¢
 		PageBean<Product> pageBean = service.findProductByCid(cid, currentPage, currentCount);
 		return pageBean;
 	}
 
 	public void productInfo(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-//		½ÓÊÜ²ÎÊı
+//		æ¥å—å‚æ•°
 		String pid = request.getParameter("pid");
 		String cid = request.getParameter("cid");
 		String cpage = request.getParameter("currentPage");
 
 		int currentPage = 1;
 
-//		²éÑ¯ÉÌÆ·
+//		æŸ¥è¯¢å•†å“
 		ProductService service = new ProductServiceImpl();
 		Product productInfo = service.findProductByID(pid);
-		Category category = service.findCategoryByCid(cid);// ²éÑ¯ÉÌÆ··ÖÀàÃû³Æ
+		Category category = service.findCategoryByCid(cid);// æŸ¥è¯¢å•†å“åˆ†ç±»åç§°
 
-//		ÕâÀïÔÚÇëÇóÀïÉèÖÃproduct,cid,currentPage,categoryµÄÒ³ÃæÊôĞÔ,´«ÈërequestÓòÖĞ
+//		è¿™é‡Œåœ¨è¯·æ±‚é‡Œè®¾ç½®product,cid,currentPage,categoryçš„é¡µé¢å±æ€§,ä¼ å…¥requeståŸŸä¸­
 		request.setAttribute("product", productInfo);
 		request.setAttribute("cid", cid);
 		request.setAttribute("category", category);
@@ -137,36 +137,36 @@ public class ProductServlet extends BaseServlet {
 
 		handleCookie(request, response, pid);
 
-//		ÇëÇó×ª·¢
+//		è¯·æ±‚è½¬å‘
 		request.getRequestDispatcher("product_info.jsp").forward(request, response);
 	}
 
 	public void handleCookie(HttpServletRequest request, HttpServletResponse response, String pid) {
 		String pids = null;
-//		´ÓcookieÖĞ¶ÁÈ¡ÊÇ·ñÓÉ½Ğ"pids"µÄÖµ
+//		ä»cookieä¸­è¯»å–æ˜¯å¦ç”±å«"pids"çš„å€¼
 		Cookie[] cookies = request.getCookies();
-//		ÅĞ¶ÏcookieÊÇ·ñÎª¿Õ
+//		åˆ¤æ–­cookieæ˜¯å¦ä¸ºç©º
 		if (cookies != null) {
-//			±éÀúcookie,Ñ°ÕÒpid
+//			éå†cookie,å¯»æ‰¾pid
 			for (Cookie c : cookies) {
-//				ÅĞ¶ÏÊÇ·ñÊÇpid
+//				åˆ¤æ–­æ˜¯å¦æ˜¯pid
 				if ("pids".equals(c.getName())) {
-//					»ñÈ¡cookieµÄÖµ
+//					è·å–cookieçš„å€¼
 					pids = c.getValue();
 
-//					½«»ñÈ¡µÄpid×ª»¯ÎªÊı×é,·½±ã²Ù×÷pidµÄË³Ğò
-//					½«","×÷·Ö½ç·û,·Ö¸îpids³ÉÊı×é
+//					å°†è·å–çš„pidè½¬åŒ–ä¸ºæ•°ç»„,æ–¹ä¾¿æ“ä½œpidçš„é¡ºåº
+//					å°†","ä½œåˆ†ç•Œç¬¦,åˆ†å‰²pidsæˆæ•°ç»„
 					String[] pidStr = pids.split("-");
 					List<String> pidList = Arrays.asList(pidStr);
-					LinkedList<String> pidLink = new LinkedList<>(pidList);// ×ª»»³ÉLinkedList¸ü·½±ã²Ù×÷
+					LinkedList<String> pidLink = new LinkedList<>(pidList);// è½¬æ¢æˆLinkedListæ›´æ–¹ä¾¿æ“ä½œ
 
-//					Èç¹ûcookiÀï°üº¬µ±Ç°µÄpid,ÒÆ³ıpid²¢ÖØĞÂ·Åµ½µÚÒ»¸ö(±£Ö¤ÆäÔÚä¯ÀÀ¼ÇÂ¼×îÇ°ÁĞ)
+//					å¦‚æœcookié‡ŒåŒ…å«å½“å‰çš„pid,ç§»é™¤pidå¹¶é‡æ–°æ”¾åˆ°ç¬¬ä¸€ä¸ª(ä¿è¯å…¶åœ¨æµè§ˆè®°å½•æœ€å‰åˆ—)
 					if (pidLink.contains(pid)) {
 						pidLink.remove(pid);
 					}
-					pidLink.addFirst(pid);// ÎŞÂÛÊÇ·ñÖØ¸´,¶¼Ìí¼Óµ½×îĞÂµÄÎ»ÖÃ
+					pidLink.addFirst(pid);// æ— è®ºæ˜¯å¦é‡å¤,éƒ½æ·»åŠ åˆ°æœ€æ–°çš„ä½ç½®
 
-//					Ê¹ÓÃ×Ö·û´®Æ´½Ó,ÖØĞÂ½«Êı×é×ª»¯Îª×Ö·û´®
+//					ä½¿ç”¨å­—ç¬¦ä¸²æ‹¼æ¥,é‡æ–°å°†æ•°ç»„è½¬åŒ–ä¸ºå­—ç¬¦ä¸²
 					StringBuffer sBuffer = new StringBuffer();
 
 					for (int i = 0; i < pidLink.size() && i < 7; i++) {
@@ -182,49 +182,49 @@ public class ProductServlet extends BaseServlet {
 			System.out.println("debug:" + pids);
 		}
 
-//		´´½¨cookie²¢·Åµ½ÏìÓ¦ÖĞ
+//		åˆ›å»ºcookieå¹¶æ”¾åˆ°å“åº”ä¸­
 		Cookie c = new Cookie("pids", pids);
 		response.addCookie(c);
 	}
 
 	public void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		µ÷ÓÃservice²ã
+//		è°ƒç”¨serviceå±‚
 		ProductServiceImpl service = new ProductServiceImpl();
 		List<Product> hotProducts = service.findHotProducts();
 		List<Product> newProducts = service.findNewProducts();
 //		List<Category> categoryList = service.findAllCategorys();
 
-//		ÉèÖÃÒ³ÃæÊôĞÔ		
+//		è®¾ç½®é¡µé¢å±æ€§		
 		request.setAttribute("hotProducts", hotProducts);
 		request.setAttribute("newProducts", newProducts);
 //		request.setAttribute("categoryList", categoryList);
 
-//		ÇëÇó×ª·¢Ê×Ò³
+//		è¯·æ±‚è½¬å‘é¦–é¡µ
 		request.getRequestDispatcher("/index.jsp").forward(request, response);
 	}
 
 	public void categoryList(HttpServletRequest request, HttpServletResponse response) throws IOException {
-//		»ñÈ¡²ÎÊı
-//		µ÷ÓÃservice²ã²éÑ¯Êı¾İ
-//		ÅĞ¶ÏredisÖĞÓĞÎŞ·ÖÀàµÄ»º´æĞÅÏ¢,ÓĞÔòÖ±½Óµ÷ÓÃ,Ã»ÓĞÔò²éÑ¯Êı¾İ¿â
+//		è·å–å‚æ•°
+//		è°ƒç”¨serviceå±‚æŸ¥è¯¢æ•°æ®
+//		åˆ¤æ–­redisä¸­æœ‰æ— åˆ†ç±»çš„ç¼“å­˜ä¿¡æ¯,æœ‰åˆ™ç›´æ¥è°ƒç”¨,æ²¡æœ‰åˆ™æŸ¥è¯¢æ•°æ®åº“
 		Jedis redis = JedisPoolUtils.getJedis();
 		String categoryListJson = redis.get("categoryListJson");
 
 		if (categoryListJson == null) {
-			System.out.println("ÎŞ»º´æ,ĞèÒª²éÑ¯Êı¾İ¿â");
+			System.out.println("æ— ç¼“å­˜,éœ€è¦æŸ¥è¯¢æ•°æ®åº“");
 
-//			²éÑ¯Êı¾İ¿â
+//			æŸ¥è¯¢æ•°æ®åº“
 			ProductService service = new ProductServiceImpl();
 			List<Category> categoryList = service.findAllCategorys();
-//			×ª»¯ÎªjsonÊı¾İ¸ñÊ½
+//			è½¬åŒ–ä¸ºjsonæ•°æ®æ ¼å¼
 			Gson gson = new Gson();
-			categoryListJson = gson.toJson(categoryList);// ´«ÈëµÄ±äÁ¿²»¿ÉÒÔ¼ÓË«ÒıºÅ
+			categoryListJson = gson.toJson(categoryList);// ä¼ å…¥çš„å˜é‡ä¸å¯ä»¥åŠ åŒå¼•å·
 
-//			»º´æµ½redisÖĞ
+//			ç¼“å­˜åˆ°redisä¸­
 			redis.set("categoryListJson", categoryListJson);
 
 		} else {
-			System.out.println("ÓĞRedis»º´æ,Ö±½Óµ÷ÓÃredis");
+			System.out.println("æœ‰Redisç¼“å­˜,ç›´æ¥è°ƒç”¨redis");
 		}
 		redis.close();
 
@@ -234,45 +234,45 @@ public class ProductServlet extends BaseServlet {
 	}
 
 	public void addCart(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		1.»ñÈ¡ÉÌÆ·²ÎÊı
+//		1.è·å–å•†å“å‚æ•°
 		String pid = request.getParameter("pid");
 		String countStr = request.getParameter("count");
 		int count = Integer.parseInt(countStr);
 
-//		2.´¦Àí
-//		²éÑ¯ÉÌÆ·		
+//		2.å¤„ç†
+//		æŸ¥è¯¢å•†å“		
 		ProductServiceImpl service = new ProductServiceImpl();
 		Product product = service.findProductByID(pid);
 
-//		´´½¨¹ºÎï³µ,´«ÈëÉÌÆ·ĞÅÏ¢,¶©¹ºÊıÁ¿ÒÔ¼°×Ü¼Û
+//		åˆ›å»ºè´­ç‰©è½¦,ä¼ å…¥å•†å“ä¿¡æ¯,è®¢è´­æ•°é‡ä»¥åŠæ€»ä»·
 		CartItem item = new CartItem(product, count, product.getShop_price() * count);
-//		½«¹ºÎï³µÏî·ÅÈë¹ºÎï³µ
+//		å°†è´­ç‰©è½¦é¡¹æ”¾å…¥è´­ç‰©è½¦
 		HttpSession session = request.getSession();
 		Cart cart = (Cart) session.getAttribute("cart");
 		if (cart == null) {
 			cart = new Cart();
 		}
-//		ÅĞ¶Ï¹ºÎï³µÀïÊÇ·ñÓÖÖØ¸´µÄ
+//		åˆ¤æ–­è´­ç‰©è½¦é‡Œæ˜¯å¦åˆé‡å¤çš„
 		if (cart.getCartitem().containsKey(pid)) {
-			// »ñÈ¡µ½Ö®Ç°µÄÉÌÆ·ÏîoldItem
+			// è·å–åˆ°ä¹‹å‰çš„å•†å“é¡¹oldItem
 			CartItem oldItem = cart.getCartitem().get(pid);
-			// °ÑÖ®Ç°¹ºÎï³µÀïµÄÉÌÆ·ÊıÁ¿¼ÓÉÏĞÂ¼ÓÈë¹ºÎï³µ¸öµÄÉÌÆ·ÊıÁ¿
+			// æŠŠä¹‹å‰è´­ç‰©è½¦é‡Œçš„å•†å“æ•°é‡åŠ ä¸Šæ–°åŠ å…¥è´­ç‰©è½¦ä¸ªçš„å•†å“æ•°é‡
 			item.setBuyNum(item.getBuyNum() + oldItem.getBuyNum());
-			// ÖØĞÂ¼ÆËãÉÌÆ·×Ü¼Û
+			// é‡æ–°è®¡ç®—å•†å“æ€»ä»·
 			item.setSubTotal(item.getSubTotal() + oldItem.getSubTotal());
-			// ÔÙ´Ó×Ü¼ÛÉÏ¼õÈ¥Ô­ÏÈ´ËÉÌÆ·µÄ¼Û¸ñ
+			// å†ä»æ€»ä»·ä¸Šå‡å»åŸå…ˆæ­¤å•†å“çš„ä»·æ ¼
 			cart.setTotal(cart.getTotal() - oldItem.getSubTotal());
 		}
 
-//		½«ĞÂµÄÉÌÆ··ÅÈë¹ºÎï³µ
+//		å°†æ–°çš„å•†å“æ”¾å…¥è´­ç‰©è½¦
 		cart.getCartitem().put(pid, item);
-//		¼ÆËã×Ü¼Û
+//		è®¡ç®—æ€»ä»·
 		cart.setTotal(cart.getTotal() + item.getSubTotal());
 
-//		½«ĞŞ¸ÄºÃµÄ¹ºÎï³µ·ÅÈësessionÖĞ
+//		å°†ä¿®æ”¹å¥½çš„è´­ç‰©è½¦æ”¾å…¥sessionä¸­
 		session.setAttribute("cart", cart);
 
-//		3.ÇëÇó×ª·¢
+//		3.è¯·æ±‚è½¬å‘
 		request.getRequestDispatcher("cart.jsp").forward(request, response);
 	}
 
@@ -283,28 +283,28 @@ public class ProductServlet extends BaseServlet {
 	 * @throws IOException
 	 */
 	public void delFromCart(HttpServletRequest request, HttpServletResponse response) throws IOException{
-//		´ÓrequestºÍsessionÖĞ»ñÈ¡Êı¾İ
+//		ä»requestå’Œsessionä¸­è·å–æ•°æ®
 		String pid = request.getParameter("pid");
 
-//		»ñÈ¡¹ºÎï³µ¶ÔÏó
+//		è·å–è´­ç‰©è½¦å¯¹è±¡
 		HttpSession session = request.getSession();
 		Cart cart = (Cart)session.getAttribute("cart");
-		
+
 		if (cart != null) {
-//			»ñÈ¡¼¯ºÏ
+//			è·å–é›†åˆ
 			Map<String, CartItem> list = cart.getCartitem();
-//			ÖØĞÂ¼ÆËã½ğ¶î
-			cart.setTotal(cart.getTotal()-list.get(pid).getSubTotal());
-			
-//			ÒÆ³ı±»É¾³ıµÄÏîÄ¿
+//			é‡æ–°è®¡ç®—é‡‘é¢
+			cart.setTotal(cart.getTotal() - list.get(pid).getSubTotal());
+
+//			ç§»é™¤è¢«åˆ é™¤çš„é¡¹ç›®
 			list.remove(pid);
 		}
-		
-//		±£´æÖÁsession
+
+//		ä¿å­˜è‡³session
 		session.setAttribute("cart", cart);
-		
-//		ÉèÖÃÏìÓ¦Ò³ÃæÂ·¾¶
-		response.sendRedirect(request.getContextPath()+"/cart.jsp");
+
+//		è®¾ç½®å“åº”é¡µé¢è·¯å¾„
+		response.sendRedirect(request.getContextPath() + "/cart.jsp");
 
 	}
 	
@@ -314,9 +314,9 @@ public class ProductServlet extends BaseServlet {
 	 * @throws IOException 
 	 */
 	public void clearCart(HttpServletRequest request, HttpServletResponse response) throws IOException {
-//		»ñÈ¡µ½session
+//		è·å–åˆ°session
 		HttpSession session = request.getSession();
-//		Çå³ı¹ºÎï³µÖ»ĞèÉ¾³ısessionºóÖØĞÂ×ªÏòcart.jspÒ³Ãæ¼´¿É
+//		æ¸…é™¤è´­ç‰©è½¦åªéœ€åˆ é™¤sessionåé‡æ–°è½¬å‘cart.jspé¡µé¢å³å¯
 		session.removeAttribute("cart");
 		response.sendRedirect(request.getContextPath()+"/cart.jsp");
 	}

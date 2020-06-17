@@ -29,12 +29,12 @@ public class CheckUsername extends HttpServlet {
 		String username = request.getParameter("username");
 		String msg = "";
 		if (username == null) {
-			msg = "{\"error\":\"没有传入用户名\"}";
-		}else {
+			msg = "{\"error\":\"娌℃湁浼犲叆鐢ㄦ埛鍚峔"}";
+		} else {
 //			2
 			UserService is = new IUserServiceImpl();
 			Boolean result = is.findByUsername(username);
-			msg = "{\"canUse\":"+result+"}";
+			msg = "{\"canUse\":" + result + "}";
 		}
 //		3
 		printWriter.println(msg);
