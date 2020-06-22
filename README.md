@@ -1,4 +1,7 @@
+此项目来源于网络,目的是用于学习.如有侵权,联系删除.
+
 # GeekShop概述
+
 基于`MVC架构+Servlet+JSP+Tomcat`的Java后端电商练习项目,项目创建日期为2019年8月,用于熟悉JavaWeb基本工作原理.
 
 虽然此项目使用的JSP技术过于老旧,但在学习的过程是以Servlet为主,JSP为辅.在熟悉Servlet之后为学习Spring框架打好了扎实良好的基础.
