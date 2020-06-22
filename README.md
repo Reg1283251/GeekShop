@@ -13,8 +13,25 @@ JSP页面使用`Bootstrap+jQuery+HTML+CSS`美化布局,使用`JSTL+EL`获取服�
 数据库用的是`MySQL`实现数据存储,`Redis`实现数据持久化
 
 ## 效果图
+点击标题定位jsp文件
 ### 首页
 ![](https://cdn.jsdelivr.net/gh/realLiamTurner/Image-Hosting-Service/GeekShop/README/indexpag.png)
+
+### 用户注册页面
+![](https://cdn.jsdelivr.net/gh/realLiamTurner/Image-Hosting-Service/GeekShop/README/register.png)
+
+### 商品分类
+![](https://cdn.jsdelivr.net/gh/realLiamTurner/Image-Hosting-Service/GeekShop/README/20200623002342.png)
+
+### 商品详情
+![](https://cdn.jsdelivr.net/gh/realLiamTurner/Image-Hosting-Service/GeekShop/README/productInfo.png)
+
+### 购物车
+![](https://cdn.jsdelivr.net/gh/realLiamTurner/Image-Hosting-Service/GeekShop/README/addcart.png)
+
+
+
+
 
 
 
