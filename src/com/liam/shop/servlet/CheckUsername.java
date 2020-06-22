@@ -1,16 +1,14 @@
 package com.liam.shop.servlet;
 
-import java.io.IOException;
-import java.io.PrintWriter;
+import com.liam.shop.service.UserService;
+import com.liam.shop.service.impl.IUserServiceImpl;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import com.liam.shop.service.UserService;
-import com.liam.shop.service.impl.IUserServiceImpl;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
  * Servlet implementation class CheckUsername
@@ -22,6 +20,7 @@ public class CheckUsername extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter printWriter = response.getWriter();
@@ -43,6 +42,7 @@ public class CheckUsername extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}

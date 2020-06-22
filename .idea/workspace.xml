@@ -1,31 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="GROUP_BY_SEVERITY" value="true" />
+  </component>
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="GeekShop:Web exploded" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="3085a61e-0613-4aa4-9e1b-f41402c2724f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/com/liam/shop/dao/IProductDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/liam/shop/dao/IProductDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/liam/shop/dao/IUserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/liam/shop/dao/IUserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/liam/shop/dao/impl/IProductDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/liam/shop/dao/impl/IProductDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/liam/shop/dao/impl/IUserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/liam/shop/dao/impl/IUserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/liam/shop/pojo/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/liam/shop/pojo/Cart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/liam/shop/pojo/CartItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/liam/shop/pojo/CartItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/liam/shop/pojo/PageBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/liam/shop/pojo/PageBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/liam/shop/service/impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/liam/shop/service/impl/ProductServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/liam/shop/servlet/ActiveServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/liam/shop/servlet/ActiveServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/liam/shop/servlet/CategoryListServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/liam/shop/servlet/CategoryListServlet.java" afterDir="false" />
+    <list default="true" id="3085a61e-0613-4aa4-9e1b-f41402c2724f" name="Default Changelist" comment="test">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Java_EE_6_Java_EE_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Java_EE_6_Java_EE_6.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/com/liam/shop/pojo/Category.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/classes/com/liam/shop/pojo/Category.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/com/liam/shop/pojo/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/classes/com/liam/shop/pojo/Product.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/liam/shop/servlet/CheckUsername.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/liam/shop/servlet/CheckUsername.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/liam/shop/servlet/IndexServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/liam/shop/servlet/IndexServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/liam/shop/servlet/ProductInfoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/liam/shop/servlet/ProductInfoServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/liam/shop/servlet/ProductListByCidServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/liam/shop/servlet/ProductListByCidServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/liam/shop/servlet/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/liam/shop/servlet/RegisterServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/liam/shop/test/IProductDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/liam/shop/test/IProductDaoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/liam/shop/test/IUserDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/liam/shop/test/IUserDaoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/liam/shop/web/servlet/BaseServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/liam/shop/web/servlet/BaseServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/liam/shop/web/servlet/ProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/liam/shop/web/servlet/ProductServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/liam/shop/web/servlet/UserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/liam/shop/web/servlet/UserServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/liam/utils/CommonUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/liam/utils/CommonUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/liam/utils/JedisPoolUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/liam/utils/JedisPoolUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/liam/utils/MD5Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/liam/utils/MD5Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/liam/utils/MailUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/liam/utils/MailUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +27,13 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectId" id="1Z1wZCWyBrA6QUk2JfLP4QMBSyv" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -48,10 +48,13 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SONARLINT_ANALYSIS_RESULTS_SPLIT_PROPORTION" value="0.47282913" />
+    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/javax.persistence.jar!/" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -60,7 +63,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="File.Encoding" />
@@ -74,7 +77,7 @@
   </component>
   <component name="RunManager">
     <configuration name="Tomcat 9.0.22" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.22" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:6080/geekshop/" />
+      <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATING_POLICY" value="update-resources" />
       <deployment>
@@ -162,6 +165,7 @@
       <workItem from="1584022702570" duration="1297000" />
       <workItem from="1592196466007" duration="306000" />
       <workItem from="1592401787540" duration="340000" />
+      <workItem from="1592841328862" duration="1320000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1584023470850</created>
@@ -202,48 +206,81 @@
     <option name="LAST_COMMIT_MESSAGE" value="test" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="408" y="114" key="#Project_Structure" timestamp="1592401910808">
+    <state x="408" y="114" key="#Project_Structure" timestamp="1592841459138">
       <screen x="0" y="0" width="1857" height="1080" />
     </state>
     <state x="408" y="114" key="#Project_Structure/0.0.1857.1080/-1920.-4.1920.1080@0.0.1857.1080" timestamp="1592401910808" />
-    <state x="382" y="195" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592401839653">
+    <state x="408" y="114" key="#Project_Structure/0.0.1857.1080@0.0.1857.1080" timestamp="1592841459138" />
+    <state x="378" y="158" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592842253929">
       <screen x="0" y="0" width="1857" height="1080" />
     </state>
-    <state x="381" y="195" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1854.1080/-1920.-4.1920.1080@0.0.1854.1080" timestamp="1584022202136" />
     <state x="382" y="195" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1857.1080/-1920.-4.1920.1080@0.0.1857.1080" timestamp="1592401839653" />
-    <state x="778" y="318" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog" timestamp="1584020425201">
-      <screen x="0" y="0" width="1854" height="1080" />
-    </state>
-    <state x="778" y="318" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog/0.0.1854.1080/-1920.-4.1920.1080@0.0.1854.1080" timestamp="1584020425201" />
-    <state x="678" y="362" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog" timestamp="1584021131334">
-      <screen x="0" y="0" width="1854" height="1080" />
-    </state>
-    <state x="678" y="362" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.0.1854.1080/-1920.-4.1920.1080@0.0.1854.1080" timestamp="1584021131334" />
-    <state x="528" y="129" key="CommitChangelistDialog2" timestamp="1592402213977">
+    <state x="378" y="158" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1857.1080@0.0.1857.1080" timestamp="1592842253929" />
+    <state x="528" y="129" key="CommitChangelistDialog2" timestamp="1592842607318">
       <screen x="0" y="0" width="1857" height="1080" />
     </state>
-    <state x="527" y="129" key="CommitChangelistDialog2/0.0.1854.1080/-1920.-4.1920.1080@0.0.1854.1080" timestamp="1584023829806" />
     <state x="528" y="129" key="CommitChangelistDialog2/0.0.1857.1080/-1920.-4.1920.1080@0.0.1857.1080" timestamp="1592402213977" />
-    <state x="402" y="386" width="440" height="465" key="FileChooserDialogImpl" timestamp="1584024178234">
-      <screen x="0" y="0" width="1854" height="1080" />
+    <state x="528" y="129" key="CommitChangelistDialog2/0.0.1857.1080@0.0.1857.1080" timestamp="1592842607318" />
+    <state x="702" y="280" key="FileChooserDialogImpl" timestamp="1592841615488">
+      <screen x="0" y="0" width="1857" height="1080" />
     </state>
-    <state x="402" y="386" width="440" height="465" key="FileChooserDialogImpl/0.0.1854.1080/-1920.-4.1920.1080@0.0.1854.1080" timestamp="1584024178234" />
+    <state x="702" y="280" key="FileChooserDialogImpl/0.0.1857.1080@0.0.1857.1080" timestamp="1592841615488" />
+    <state width="1366" height="313" key="GridCell.Tab.0.bottom" timestamp="1592842527124">
+      <screen x="0" y="0" width="1857" height="1080" />
+    </state>
+    <state width="1366" height="313" key="GridCell.Tab.0.bottom/0.0.1857.1080@0.0.1857.1080" timestamp="1592842527124" />
+    <state width="1366" height="313" key="GridCell.Tab.0.center" timestamp="1592842527124">
+      <screen x="0" y="0" width="1857" height="1080" />
+    </state>
+    <state width="1366" height="313" key="GridCell.Tab.0.center/0.0.1857.1080@0.0.1857.1080" timestamp="1592842527124" />
+    <state width="1366" height="313" key="GridCell.Tab.0.left" timestamp="1592842527124">
+      <screen x="0" y="0" width="1857" height="1080" />
+    </state>
+    <state width="1366" height="313" key="GridCell.Tab.0.left/0.0.1857.1080@0.0.1857.1080" timestamp="1592842527124" />
+    <state width="1366" height="313" key="GridCell.Tab.0.right" timestamp="1592842527124">
+      <screen x="0" y="0" width="1857" height="1080" />
+    </state>
+    <state width="1366" height="313" key="GridCell.Tab.0.right/0.0.1857.1080@0.0.1857.1080" timestamp="1592842527124" />
+    <state width="1366" height="313" key="GridCell.Tab.1.bottom" timestamp="1592842527125">
+      <screen x="0" y="0" width="1857" height="1080" />
+    </state>
+    <state width="1366" height="313" key="GridCell.Tab.1.bottom/0.0.1857.1080@0.0.1857.1080" timestamp="1592842527125" />
+    <state width="1366" height="313" key="GridCell.Tab.1.center" timestamp="1592842527125">
+      <screen x="0" y="0" width="1857" height="1080" />
+    </state>
+    <state width="1366" height="313" key="GridCell.Tab.1.center/0.0.1857.1080@0.0.1857.1080" timestamp="1592842527125" />
+    <state width="1366" height="313" key="GridCell.Tab.1.left" timestamp="1592842527124">
+      <screen x="0" y="0" width="1857" height="1080" />
+    </state>
+    <state width="1366" height="313" key="GridCell.Tab.1.left/0.0.1857.1080@0.0.1857.1080" timestamp="1592842527124" />
+    <state width="1366" height="313" key="GridCell.Tab.1.right" timestamp="1592842527125">
+      <screen x="0" y="0" width="1857" height="1080" />
+    </state>
+    <state width="1366" height="313" key="GridCell.Tab.1.right/0.0.1857.1080@0.0.1857.1080" timestamp="1592842527125" />
+    <state width="1366" height="313" key="GridCell.Tab.2.bottom" timestamp="1592842527125">
+      <screen x="0" y="0" width="1857" height="1080" />
+    </state>
+    <state width="1366" height="313" key="GridCell.Tab.2.bottom/0.0.1857.1080@0.0.1857.1080" timestamp="1592842527125" />
+    <state width="1366" height="313" key="GridCell.Tab.2.center" timestamp="1592842527125">
+      <screen x="0" y="0" width="1857" height="1080" />
+    </state>
+    <state width="1366" height="313" key="GridCell.Tab.2.center/0.0.1857.1080@0.0.1857.1080" timestamp="1592842527125" />
+    <state width="1366" height="313" key="GridCell.Tab.2.left" timestamp="1592842527125">
+      <screen x="0" y="0" width="1857" height="1080" />
+    </state>
+    <state width="1366" height="313" key="GridCell.Tab.2.left/0.0.1857.1080@0.0.1857.1080" timestamp="1592842527125" />
+    <state width="1366" height="313" key="GridCell.Tab.2.right" timestamp="1592842527125">
+      <screen x="0" y="0" width="1857" height="1080" />
+    </state>
+    <state width="1366" height="313" key="GridCell.Tab.2.right/0.0.1857.1080@0.0.1857.1080" timestamp="1592842527125" />
     <state x="508" y="274" key="IDE.errors.dialog" timestamp="1592196468607">
       <screen x="0" y="0" width="1857" height="1080" />
     </state>
     <state x="508" y="274" key="IDE.errors.dialog/0.0.1857.1080/-1920.-4.1920.1080@0.0.1857.1080" timestamp="1592196468607" />
-    <state x="235" y="147" key="SettingsEditor" timestamp="1592196771813">
+    <state x="235" y="147" key="SettingsEditor" timestamp="1592842005142">
       <screen x="0" y="0" width="1857" height="1080" />
     </state>
-    <state x="464" y="134" key="SettingsEditor/0.0.1854.1080/-1920.-4.1920.1080@0.0.1854.1080" timestamp="1584023657133" />
     <state x="235" y="147" key="SettingsEditor/0.0.1857.1080/-1920.-4.1920.1080@0.0.1857.1080" timestamp="1592196771813" />
-    <state x="625" y="434" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1584022414496">
-      <screen x="0" y="0" width="1854" height="1080" />
-    </state>
-    <state x="625" y="434" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1854.1080/-1920.-4.1920.1080@0.0.1854.1080" timestamp="1584022414496" />
-    <state x="590" y="235" key="search.everywhere.popup" timestamp="1584023695655">
-      <screen x="0" y="0" width="1854" height="1080" />
-    </state>
-    <state x="590" y="235" key="search.everywhere.popup/0.0.1854.1080/-1920.-4.1920.1080@0.0.1854.1080" timestamp="1584023695655" />
+    <state x="235" y="147" key="SettingsEditor/0.0.1857.1080@0.0.1857.1080" timestamp="1592842005142" />
   </component>
 </project>
