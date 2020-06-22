@@ -13,7 +13,7 @@ JSP页面使用`Bootstrap+jQuery+HTML+CSS`美化布局,使用`JSTL+EL`获取服�
 数据库用的是`MySQL`实现数据存储,`Redis`实现数据持久化
 
 ## 效果图
-点击标题定位jsp文件
+
 ### 首页
 ![](https://cdn.jsdelivr.net/gh/realLiamTurner/Image-Hosting-Service/GeekShop/README/indexpag.png)
 
